@@ -19,7 +19,7 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const typeNum = (arr) => arr.filter(n => typeof n === 'number');
-  // Solution code here...
+// Solution code here...
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -42,9 +42,9 @@ Write a function named oddValues that, given an array of integers as input, uses
 For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
-const oddValues = (arr) => {
-  // Solution code here...
-};
+const oddValues = (arr) => arr.filter(n => n % 2 === 1);
+// Solution code here...
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
