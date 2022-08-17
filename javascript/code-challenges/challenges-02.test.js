@@ -22,7 +22,7 @@ Write a function named addOne that, given an array of numbers, uses map to retur
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => arr.map(v => v + 1);
-  // Solution code here...
+// Solution code here...
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -32,7 +32,7 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 ------------------------------------------------------------------------------------------------ */
 
 const addQuestion = (arr) => arr.map(v => v + '?');
-  // Solution code here...
+// Solution code here...
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,7 +76,7 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => arr.map(secondPower => Math.pow(2, secondPower));
-  // Solution code here...
+// Solution code here...
 
 
 /* ------------------------------------------------------------------------------------------------
