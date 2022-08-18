@@ -133,7 +133,12 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   // Solution code here...
+  // https://stackoverflow.com/questions/55427185/reverse-string-in-javascript-using-reduce-method
+  //return str.reduce((acc, value) => value + acc, '').split(''); ---- Does not pass the test
 
+  // ---
+  // https://attacomsian.com/blog/string-reverse-javascript
+  return str.split('').reduce((acc, value) => value + acc, '');  //- Does pass the test with .split prepended to .reduce
 };
 
 /* ------------------------------------------------------------------------------------------------
