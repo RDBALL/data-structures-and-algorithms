@@ -138,7 +138,7 @@ const reversedString = (str) => {
 
   // ---
   // https://attacomsian.com/blog/string-reverse-javascript
-  return str.split('').reduce((acc, value) => value + acc, '');  //- Does pass the test with .split prepended to .reduce
+  return str.split('').reduce((acc, value) => value + acc, ''); //- Does pass the test with .split prepended to .reduce
 };
 
 /* ------------------------------------------------------------------------------------------------

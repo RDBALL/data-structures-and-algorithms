@@ -127,7 +127,7 @@ const getStatName = (arr, minBaseStat) => {
 //     .map((v) => {
 //       return v.stat.name;
 //     });
-// };
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
