@@ -48,10 +48,10 @@ Write a function called sortNumbers that takes an array of numbers and sorts the
 
 HINT: Beware... JS default is "Lexical" ordering.
 ------------------------------------------------------------------------------------------------ */
-
-const sortNumbers = (arr) => {
+//https://stackoverflow.com/questions/7000851/how-to-sort-numbers-correctly-with-array-sort
+const sortNumbers = (arr) => arr.sort((a, b) => a-b);
   // Solution code here...
-};
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -61,10 +61,8 @@ Write a function named sortBackwards that takes in an array of numbers and retur
 HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 ------------------------------------------------------------------------------------------------ */
 
-const sortBackwards = (arr) => {
+const sortBackwards = (arr) => arr.sort((a, b) => b - a);
   // Solution code here...
-};
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -75,9 +73,9 @@ In this alphabetization, capital letters come before lower case letters.
 For example, ['Alphabet', 'Zebra', 'alphabet', 'carrot'] is correctly sorted.
 ------------------------------------------------------------------------------------------------ */
 
-const alphabetize = (arr) => {
+const alphabetize = (arr) => arr.sort();
   // Solution code here...
-};
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -92,9 +90,9 @@ Here is an example of the input:
 ];
 ------------------------------------------------------------------------------------------------ */
 
-const sortByPrice = (arr) => {
+const sortByPrice = (arr) => arr.sort((a, b) => a.price - b.price);
   // Solution code here...
-};
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
