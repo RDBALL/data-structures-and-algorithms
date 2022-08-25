@@ -54,6 +54,11 @@ let characters = [
 
 const sortByChildren = (charArray) => {
   // Solution code here...
+  return charArray.sort(
+    (charA, charB) => (charA.children.length - charB.children.length) !== 0 ?
+      charA.children.length - charB.children.length :
+      charA.house < charB.house ? -1 : 1
+  );
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -65,11 +70,7 @@ Write a function named containsW that takes in a string. This function should us
 
 const containsW = (str) => {
   // Solution code here...
-  return str.sort(
-    (charA, charB) => (charA.children.length - charB.children.length) !== 0 ?
-      charA.children.length - charB.children.length :
-      charA.house < charB.house ? -1 : 1
-  );
+return /w/.test(str);
 };
 
 /* ------------------------------------------------------------------------------------------------
