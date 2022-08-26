@@ -76,7 +76,7 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
   // Solution code here...
-
+  return stores.reduce((acc, current) => acc.map((int, i) => int + current[i]));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -91,6 +91,7 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   // Solution code here...
+  return hours.map((hour, i) => ({ sales: `${data[i]} cookies`, time: hour}));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -116,6 +117,7 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
+  return arr[2].items[1].quantity;
 };
 
 /* ------------------------------------------------------------------------------------------------
