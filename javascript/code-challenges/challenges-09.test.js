@@ -140,6 +140,8 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
+  return Array.isArray(Object.values(arr.filter(char => char.name === character)[0])[2]);
+
 
 };
 
