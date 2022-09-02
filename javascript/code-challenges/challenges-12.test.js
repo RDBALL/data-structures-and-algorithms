@@ -94,6 +94,7 @@ Return either true or false.
 
 const validatePhoneNumber = (phoneNumber) => {
   // Solution code here...
+  // \(\d{3}\)\s?\d{3}[-.\s]?\d{4}|\d{3}[-.\s]?\d{3}[-.\s]?\d{4} works on regex101
   return /^(1\s|1|)?((\(\d{3}\))|\d{3})([\-|\s])?(\d{3})([\-|\s])?(\d{4})$/gm.test(phoneNumber);
 };
 
