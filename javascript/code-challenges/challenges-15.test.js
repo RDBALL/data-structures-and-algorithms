@@ -104,6 +104,9 @@ let starWarsData = [{
 
 let biggerThanLuke = (arr) => {
   // Solution code here...
+  let newArr = arr.filter(obj => obj.mass > 77);
+  newArr = newArr.map(obj => obj.name);
+  return newArr.join(' - ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -122,6 +125,7 @@ This data could be sorted by name or price.
 
 const sortBy = (property, arr) => {
   // Solution code here...
+  return arr.sort((a, b) => a[property] < b[property] ? -1 : 1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -138,6 +142,8 @@ https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
   // Solution code here...
+  let regex = /(^https:\/\/)/;
+  return regex.test(url);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -161,6 +167,11 @@ Here is a sample board:
 
 const detectTicTacToeWin = (board) => {
   // Solution code here...
+  let grid = board.flat();
+  let checkColArr = [0,1,2].map((number) => [grid[0+number],grid[3+number],grid[6+number]]);
+  let checkDiagonalArr = [[grid[0],grid[4],grid[8]],[grid[2],grid[4],grid[6]]];
+  let checkConsecutiveIndexValue = [...checkDiagonalArr,...checkColArr,...board];
+  return checkConsecutiveIndexValue.findIndex(arr => arr.every(indexValue => indexValue === 'X') || arr.every(indexValue => indexValue === 'O')) !== -1;
 };
 
 /* ------------------------------------------------------------------------------------------------
