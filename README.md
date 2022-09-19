@@ -18,6 +18,12 @@ To run your tests
 - run `npm test` to run all of the tests
 - run `npm test ##` to only run tests for challenge ## (i.e. 01)
 
+---
+
 ### 401 Data Structures, Code Challenges
 
-- Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
+---
+
+**Links to Whiteboard Challenges:**
+
+[Reverse List](javascript/code-challenges/Whiteboard-challenges/reverse-list/README.md)
