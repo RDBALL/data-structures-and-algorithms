@@ -18,4 +18,4 @@ Big O:
 
   * Each index in the input array is operated on once which means that the time complexity is linearly proportional to the length of the input array.
 
-  * There will be two arrays and two integers in working memory while this function is running. This causes the space complexity is linearly proportional to the length of the input array.
+  * There will be two arrays and two integers in working memory while this function is running. This causes the space complexity to be linearly proportional to the length of the input array.
