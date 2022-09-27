@@ -56,14 +56,14 @@ describe('Linked List Code Challenge 05', () => {
 describe('Linked List Code Challenge 06', () => {
   let linkedListTest = new LinkedList;
 
-  it('Can successfully add a node to the end of the linked list', () => {
+  test('Can successfully add a node to the end of the linked list', () => {
     linkedListTest.append(10);
 
     expect(linkedListTest.head.value).toBe(10);
     expect(linkedListTest.head.next).toBe(null);
   });
 
-  it('Can successfully add multiple nodes to the end of a linked list', () => {
+  test('Can successfully add multiple nodes to the end of a linked list', () => {
     linkedListTest.append(15);
     linkedListTest.append(20);
 
@@ -71,26 +71,26 @@ describe('Linked List Code Challenge 06', () => {
     expect(linkedListTest.head.next.next.value).toBe(20);
   });
 
-  it('Can successfully insert a node before a node located in the middle of a linked list', () => {
+  test('Can successfully insert a node before a node located in the middle of a linked list', () => {
     linkedListTest.insertBefore(15, 25);
 
     expect(linkedListTest.head.next.value).toBe(25);
     expect(linkedListTest.head.next.next.value).toBe(15);
   });
 
-  it('Can successfully insert a node before the first node of a linked list', () => {
+  test('Can successfully insert a node before the first node of a linked list', () => {
     linkedListTest.insertBefore(10, 30);
 
     expect(linkedListTest.head.value).toBe(30);
   });
 
-  it('Can successfully insert after a node in the middle of the linked list', () => {
+  test('Can successfully insert after a node in the middle of the linked list', () => {
     linkedListTest.insertAfter(10, 35);
 
     expect(linkedListTest.head.next.next.value).toBe(35);
   });
 
-  it('Can successfully insert a node after the last node of the linked list', () => {
+  test('Can successfully insert a node after the last node of the linked list', () => {
     let insertAfterLastNode = new LinkedList;
 
     insertAfterLastNode.append(2);
