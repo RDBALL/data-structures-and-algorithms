@@ -1,6 +1,7 @@
 'use strict';
 
-// Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
+// ---------- Create a Node class ----------
+// This class has properties for the value stored in the Node, and a pointer to the next Node.
 
 class Node {
   constructor(value, next = null) {
@@ -9,7 +10,7 @@ class Node {
   }
 }
 
-// Create a Linked List class
+// ---------- Create a Linked List class ----------
 // Within your Linked List class, include a head property.
 
 class LinkedList {
@@ -18,6 +19,24 @@ class LinkedList {
   }
 
   // The class should contain the following methods: insert, includes, to string
+
+
+  //  ---------- append ----------
+  // arguments: new value
+  // adds a new node with the given value to the end of the list
+
+  append(value) {
+    let appendNode = new Node(value);
+    if (this.head === null) {
+      this.head = appendNode;
+      return;
+    }
+    let current = this.head;
+    if (current.next !== null) {
+      current = current.next;
+    }
+    current.next = appendNode;
+  }
 
   // ---------- insert ----------
   // Arguments: value
@@ -28,6 +47,34 @@ class LinkedList {
     this.head = new Node(value, this.head);
   }
 
+  // ---------- insert before ----------
+  // arguments: value, new value
+  // adds a new node with the given new value immediately before the first node that has the value specified
+
+  insertBefore(searchValue, newValue) {
+    if (this.head.value === searchValue) {
+      this.head = new Node(newValue, this.head);
+      return;
+    }
+
+    let current = this.head;
+    while (current.next.value !== searchValue) {
+      current = current.next;
+    }
+    current.next = new Node(newValue, current.next);
+  }
+
+  // ---------- insert after ----------
+  // arguments: value, new value
+  // adds a new node with the given new value immediately after the first node that has the value specified
+
+  insertAfter(searchValue, newValue) {
+    let current = this.head;
+    while (current.next !== null && current.value !== searchValue) {
+      current = current.next;
+    }
+    current.next = new Node(newValue, current.next);
+  }
 
   // ---------- includes ----------
   // Arguments: value
