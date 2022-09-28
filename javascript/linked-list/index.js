@@ -16,6 +16,7 @@ class Node {
 class LinkedList {
   constructor() {
     this.head = null;
+    this.length = 0;
   }
 
   // The class should contain the following methods: insert, includes, to string
@@ -106,6 +107,44 @@ class LinkedList {
       current = current.next;
     }
     return string + 'NULL';
+  }
+
+  // ---------- kth from end ----------
+  // argument: a number, k, as a parameter.
+  // Return the node’s value that is k places from the tail of the linked list.
+  // You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+
+  kthFromEnd(k) {
+    let length = 0;
+    let current = this.head;
+    while (current) {
+      length++;
+      current = current.next;
+    }
+    let targetIndex = length - k;
+    if (targetIndex < 1 || targetIndex > length) return 'Exception Returned';
+    current = this.head;
+    for (let i = 1; i < targetIndex; i++) {
+      current = current.next;
+    }
+    return current.value;
+  }
+
+  // ---------- middle node ----------
+
+  middleNode() {
+    let length = 0;
+    let current = this.head;
+    while (current) {
+      length++;
+      current = current.next;
+    }
+    let targetIndex = Math.floor(length / 2);
+    current = this.head;
+    for (let i = 0; i < targetIndex; i++) {
+      current = current.next;
+    }
+    return current.value;
   }
 }
 
