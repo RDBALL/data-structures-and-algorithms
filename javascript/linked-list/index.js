@@ -146,7 +146,19 @@ class LinkedList {
     }
     return current.value;
   }
-}
 
+  //  ---------- Link List Zip ----------
+
+  zipLists(currentNodeList) {
+    let input1 = this.head;
+    let input2 = currentNodeList.head;
+    while (input1 !== null && input2 !== null) {
+      let next = input1.next;
+      input1.next = input2;
+      input1 = input2;
+      input2 = next;
+    }
+  }
+}
 
 module.exports = LinkedList;
