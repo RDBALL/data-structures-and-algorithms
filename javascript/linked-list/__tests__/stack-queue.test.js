@@ -1,5 +1,5 @@
 // Write tests to prove the following functionality:
-const {Stack, Queue} = require('../stacks-and-queues/stack-and-queue');
+const { Stack, Queue, PseudoQueue } = require('../stacks-and-queues/stack-and-queue');
 
 
 
@@ -100,5 +100,33 @@ describe('Testing Queue class', () => {
 
     expect(() => testQueue.dequeue()).toThrow();
     expect(() => testQueue.peek()).toThrow();
+  });
+
+  describe('Testing PseudoQueue class', () => {
+
+    let twoStackQueue = new PseudoQueue;
+
+    test('Can queue and dequeue one value onto PseudoQueue', () => {
+
+      twoStackQueue.enqueue('1');
+
+      expect(twoStackQueue.dequeue()).toBe('1');
+    });
+
+    test('Throws an exception when dequeuing while empty', () => {
+
+      expect(twoStackQueue.dequeue).toThrow();
+    });
+
+    test('Can queue and dequeue several values onto PseudoQueue', () => {
+
+      twoStackQueue.enqueue('10');
+      twoStackQueue.enqueue('15');
+      twoStackQueue.enqueue('20');
+
+      expect(twoStackQueue.dequeue()).toBe('10');
+      expect(twoStackQueue.dequeue()).toBe('15');
+      expect(twoStackQueue.dequeue()).toBe('20');
+    });
   });
 });
