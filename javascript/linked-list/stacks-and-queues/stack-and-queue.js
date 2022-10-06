@@ -120,7 +120,7 @@ class AnimalShelter {
   }
 
   dequeue(pref) {
-    if(pref !== 'cat' && pref !== 'dog') return null;
+    if (pref !== 'cat' && pref !== 'dog') return null;
     let current = this.front;
     let previous = {};
     while (current.value.species !== pref) {
@@ -144,4 +144,31 @@ class AnimalShelter {
   }
 }
 
-module.exports = { Queue, Stack, PseudoQueue, AnimalShelter};
+function balancedBrackets(str) {
+  let stack = new Stack();
+  let top;
+  if (str[0] === ')' || str[0] === ']' || str[0] === '}') {
+    return false;
+  }
+  for (let i = 0; i < str.length; i++) {
+
+    if (str[i] === '(' || str[i] === '[' || str[i] === '{') {
+      stack.push(str[i]);
+      continue;
+
+    } else if (str[i] === ']' || str[i] === ']' || str[i] === '}') {
+      top = stack.peek();
+      if ((top === '[' && str[i] === ']') || (top === '(' && str[i] === ')') || (top === '{' && str[i] === '}')) {
+        stack.pop();
+        continue;
+      } else {
+        return false;
+      }
+
+    }
+
+  }
+  return stack.isEmpty();
+}
+
+module.exports = { Queue, Stack, PseudoQueue, AnimalShelter, balancedBrackets };
