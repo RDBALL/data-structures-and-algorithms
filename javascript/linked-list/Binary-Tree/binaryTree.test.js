@@ -55,4 +55,7 @@ describe('Testing the Binary Search Tree class', () => {
   test('Test to confirm false is returned if value passes is not contained in tree', () => {
     expect(testBinarySearchTree.contains(10)).toBe(false);
   });
+  test('Test getMax', () => {
+    expect(testBinarySearchTree.getMax()).toBe(3);
+  });
 });
