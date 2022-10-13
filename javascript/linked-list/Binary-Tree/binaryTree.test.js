@@ -58,4 +58,21 @@ describe('Testing the Binary Search Tree class', () => {
   test('Test getMax', () => {
     expect(testBinarySearchTree.getMax()).toBe(3);
   });
+
 });
+
+describe('Testing the Binary Search Tree class', () => {
+  let tree = new BinarySearchTree();
+  tree.root = new Node(10);
+  tree.root.left = new Node(5);
+  tree.root.right = new Node(15);
+  tree.root.left.left = new Node(1);
+  tree.root.left.right = new Node(8);
+  tree.root.right.right = new Node(17);
+
+  test('Test fizzBuzzTree', () => {
+    expect(tree.fizzBuzzTree()).toEqual(['Buzz', 'Buzz', '1', '8', 'FizzBuzz', '17' ]);
+  });
+
+});
+

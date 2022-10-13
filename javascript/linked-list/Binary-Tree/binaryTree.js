@@ -93,7 +93,7 @@ class BinarySearchTree extends BinaryTree {
     return traverse(this.root);
   }
 
-  getMax(){
+  getMax() {
     let tempValueArray = [];
     const traverse = node => {
       tempValueArray.push(node.value);
@@ -110,6 +110,28 @@ class BinarySearchTree extends BinaryTree {
     });
     return maxValue;
   }
+
+  fizzBuzzTree() {
+    let newTreeArray = [];
+    const traverse = node => {
+      if (node.value % 3 !== 0 && node.value % 5 !== 0) {
+        node.value = node.value.toString();
+      } else if (node.value % 3 === 0 && node.value % 5 !== 0) {
+        node.value = 'Fizz';
+      } else if (node.value % 3 !== 0 && node.value % 5 === 0) {
+        node.value = 'Buzz';
+      } else if (node.value % 3 === 0 && node.value % 5 === 0) {
+        node.value = 'FizzBuzz';
+      }
+      newTreeArray.push(node.value);
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      console.log(node.value);
+    };
+    traverse(this.root);
+    return newTreeArray;
+  }
+
 }
 
 module.exports = { Node, BinaryTree, BinarySearchTree };
