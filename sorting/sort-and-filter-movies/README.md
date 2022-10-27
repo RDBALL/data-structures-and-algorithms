@@ -26,8 +26,12 @@
   - sortYear and sortTitle should both be implemented by passing a custom comparison function to the built-in sort utility.
   - Export these helper functions at the top level of your file, and call them from your sortYear and sortTitle functions.
   - Import these helper functions into your test, and write tests that verify they return the appropriate comparison values (<0, 0, or >0).
-  
+
 ---
+
+> in-class code challenge demo and assets used as reference for sorting method code / tests
+>
+>*[class repo](https://github.com/codefellows/seattle-code-javascript-401d48/tree/main/class-28/challenge)*
 
 ## Approach for each sorting method
 
@@ -84,6 +88,7 @@ The sortYear test is used to verify that the returned array has all movie object
   });
 
 ```
+
 The sortTitle test is used to verify that the returned array has all movie objects sorted by title in ascending order. The expected result from this function will be an array of movies from `movies.js` sorted by title while also ignoring `'The'` when sorting a-z.
 
 ```js
