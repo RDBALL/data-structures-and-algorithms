@@ -113,3 +113,4 @@ The inGenre test is used to verify that the returned array has all movie objects
     );
   });
 ```
+![Sort test results](./assets/sortTest.jpg)
