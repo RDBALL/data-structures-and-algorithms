@@ -20,7 +20,13 @@ class LinkedList {
   }
 
   // The class should contain the following methods: insert, includes, to string
-
+  traverse(callback) {
+    let current = this.head;
+    while (current !== null) {
+      callback(current.value);
+      current = current.next;
+    }
+  }
 
   //  ---------- append ----------
   // arguments: new value

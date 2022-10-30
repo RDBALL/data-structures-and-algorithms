@@ -1,0 +1,23 @@
+{
+  "name": "data-structures-and-algorithms",
+  "version": "1.0.0",
+  "description": "## 401 Data Structures, Code Challenges",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RDBALL/data-structures-and-algorithms.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RDBALL/data-structures-and-algorithms/issues"
+  },
+  "homepage": "https://github.com/RDBALL/data-structures-and-algorithms#readme",
+  "dependencies": {
+    "jest": "^29.0.3"
+  }
+}
