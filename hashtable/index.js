@@ -69,7 +69,6 @@ class HashTable {
 
     return (charSum * 31) % 100;
   }
-
 }
 
 module.exports = HashTable;
