@@ -16,7 +16,7 @@
 
 ## Approach & Efficiency
 
-![repeated Word whiteboard](./repeatedWordWhiteboard.jpg)
+![repeated Word whiteboard](./assets/repeatedWordWhiteboard.jpg)
 
 * Efficiency
   * Time:
@@ -27,4 +27,4 @@
 
 ## Testing
 
-![hashtable Test Results](./repeatedWordTest.jpg);
+![hashtable Test Results](./assets/repeatedWordTest.jpg);

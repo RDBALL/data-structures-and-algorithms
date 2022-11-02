@@ -2,42 +2,47 @@
 
 const LinkedList = require('../javascript/linked-list/');
 
-class HashTable {
-  constructor(size) {
+module.exports = class HashTable {
+
+  constructor(size){
     this.size = size;
-    this.buckets = new Array(size);
+    this.map = new Array(size);
+    this.keys = [];
   }
 
-  set(key, value) {
-    let position = this.hash(key);
-    let data = { [key]: value };
-
-    if (this.buckets[position]) {
-      let bucket = this.buckets[position];
-      bucket.append(data);
-    } else {
-      let bucket = new LinkedList();
-      bucket.append(data);
-      this.buckets[position] = bucket;
+  hash(key){
+    let sum = 0, remainder;
+    for (let i=0; i<key.length; i++){
+      sum = sum + key.charCodeAt(i);
     }
+    remainder = (sum*1117) % this.size;
+    return remainder;
   }
 
-  get(key) {
-    let position = this.hash(key);
+  contains(key){
+    let i = this.hash(key);
+    let bucketAtI = this.map[i];
+    if (bucketAtI){
+      return true;
+    }
+    return false;
+  }
 
-    if (this.buckets[position]) {
-      let bucket = this.buckets[position];
-      let current = bucket.head.value;
-      while (!current[key]) {
-        if (current.next === null) return null;
+  get(key){
+    let i = this.hash(key);
+    let bucketAtI = this.map[i];
+    if (bucketAtI){
+      let current = bucketAtI.head;
+      while(current){
+        if(current.value){
+          return current.value.value;
+        }
         current = current.next;
       }
-      return current[key];
-    } else {
       return null;
     }
+    return null;
   }
-
   has(key) {
     let position = this.hash(key);
 
@@ -52,23 +57,22 @@ class HashTable {
     }
   }
 
-  keys() {
-    let existingHashes = this.buckets.filter((bucket) => Boolean(bucket));
-    let keys = [];
-    existingHashes.forEach((linkedList) => {
-      linkedList.traverse((nodeValue) => keys.push(Object.keys(nodeValue)[0]));
-    });
-    return keys;
+  set(key, value){
+    let i = this.hash(key);
+    let bucketAtI = this.map[i];
+    let keyValue = {
+      key: key,
+      value: value,
+    };
+
+    if (bucketAtI){
+      bucketAtI.append(keyValue);
+    }else{
+      let list = new LinkedList();
+      list.append(keyValue);
+      this.map[i] = list;
+      this.keys.push(key);
+    }
   }
 
-  hash(key) {
-    let char = key.split('');
-    let charSum = char.reduce((sum, char) => {
-      return sum + char.charCodeAt(0);
-    }, 0);
-
-    return (charSum * 31) % 100;
-  }
-}
-
-module.exports = HashTable;
+};

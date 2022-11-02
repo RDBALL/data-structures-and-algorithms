@@ -66,4 +66,4 @@ class HashTable {
 
 ## Testing
 
-![hashtable Test Results](./hashtableTest.jpg);
+![hashtable Test Results](./assets/hashtableTest.jpg);
