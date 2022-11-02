@@ -12,7 +12,7 @@ module.exports = function treeIntersection(tree1, tree2){
 
 function addToTable(node, treeTable) {
   if (node) {
-    treeTable.add(node.value.toString(), node.value);
+    treeTable.set(node.value.toString(), node.value);
     addToTable(node.left, treeTable);
     addToTable(node.right, treeTable);
   }

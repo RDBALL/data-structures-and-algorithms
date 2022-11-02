@@ -39,9 +39,9 @@ describe('Testing the Binary Search Tree class', () => {
   let testBinarySearchTree = new BinarySearchTree();
 
   test('Creating a tree with leafs branching from root node', () => {
-    testBinarySearchTree.addNode(2);
-    testBinarySearchTree.addNode(1);
-    testBinarySearchTree.addNode(3);
+    testBinarySearchTree.add(2);
+    testBinarySearchTree.add(1);
+    testBinarySearchTree.add(3);
 
     expect(testBinarySearchTree.root.value).toBe(2);
     expect(testBinarySearchTree.root.left.value).toBe(1);
