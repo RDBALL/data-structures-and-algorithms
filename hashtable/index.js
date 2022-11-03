@@ -43,19 +43,6 @@ module.exports = class HashTable {
     }
     return null;
   }
-  has(key) {
-    let position = this.hash(key);
-
-    if (this.buckets[position]) {
-      let bucket = this.buckets[position];
-      let current = bucket.head.value;
-      while (!current[key]) {
-        if (current.next === null) return false;
-        current = current.next;
-      }
-      return true;
-    }
-  }
 
   set(key, value){
     let i = this.hash(key);
@@ -74,5 +61,4 @@ module.exports = class HashTable {
       this.keys.push(key);
     }
   }
-
 };
